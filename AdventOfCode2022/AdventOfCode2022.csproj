@@ -8,7 +8,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Data" />
+      <None Remove="Data\Day1.txt" />
+      <EmbeddedResource Include="Data\Day1.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
     </ItemGroup>
 
 </Project>

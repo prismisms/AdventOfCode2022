@@ -1,4 +1,6 @@
-﻿Solutions();
+﻿using AdventOfCode2022.Days;
+
+Solutions();
 
 static void Solutions()
 {
@@ -23,7 +25,7 @@ static void Solutions()
 
 static (long, long) ResultsForDay(int day) => day switch
 {
-    // 1 => new Day1(GetFilePath(day)).GetResult(),
+    1 => new Day1(GetFilePath(day)).GetResult(),
     // 2 => new Day2(GetFilePath(day)).GetResult(),
     // 3 => new Day3(GetFilePath(day)).GetResult(),
     // 4 => new Day4(GetFilePath(day)).GetResult(),
@@ -36,7 +38,7 @@ static (long, long) ResultsForDay(int day) => day switch
     // 11 => new Day11(GetFilePath(day)).GetResult(),
     // 12 => new Day12(GetFilePath(day)).GetResult(),
     // 13 => new Day13(GetFilePath(day)).GetResult(),
-    // _ => throw new ArgumentOutOfRangeException($"Day {day} is either out of scope or not yet implemented")
+    _ => throw new ArgumentOutOfRangeException($"Day {day} is either out of scope or not yet implemented")
 };
 
 static string GetFilePath(int dayNumber)
