@@ -9,19 +9,7 @@ public class Day1 : DayBase<string, int>
     public override int Part1()
     {
         FileContents.ForEach(Console.WriteLine);
-        var largestCalories = 0;
-        foreach (var line in FileContents)
-        {
-            var amounts = line.Split(' ').ToList();
-            amounts.ForEach(Console.WriteLine);
-            var amount = line.Split(' ').Sum(x => !string.IsNullOrWhiteSpace(x) ? int.Parse(x) : 0);
-
-            if (amount > largestCalories)
-            {
-                largestCalories = amount;
-            }
-        }
-        return largestCalories;
+        return FileContents.Select(line => line.Split(' ').Sum(x => !string.IsNullOrWhiteSpace(x) ? int.Parse(x) : 0)).Prepend(0).Max();
     }
 
     // Top three elves
