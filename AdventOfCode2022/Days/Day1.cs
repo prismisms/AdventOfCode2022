@@ -6,7 +6,7 @@ public class Day1 : DayBase<string, int>
     {
     }
 
-    public override int Part1() => FileContents.Select(line => line.Split(' ').Sum(x => !string.IsNullOrWhiteSpace(x) ? int.Parse(x) : 0)).Prepend(0).Max();
+    public override int Part1() => FileContents.Select(line => line.Split(' ').Sum(x => !string.IsNullOrWhiteSpace(x) ? int.Parse(x) : 0)).Max();
 
     // Top three elves
     public override int Part2()
