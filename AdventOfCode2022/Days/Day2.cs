@@ -88,40 +88,27 @@ public class Day2 : DayBase<string, int>
             var opponent = x[0];
             var result = x[2];
 
-            switch (result)
+            totalScore += result switch
             {
                 // lose
-                case 'X':
-                    totalScore += opponent switch
-                    {
-                        'A' => (int) RockPaperScissors.C,
-                        'B' => (int) RockPaperScissors.A,
-                        _ => (int) RockPaperScissors.B
-                    };
-                    break;
-                // draw
-                case 'Y' when opponent == 'A':
-                    totalScore += (int) RockPaperScissors.A + 3;
-                    break;
-                case 'Y' when opponent == 'B':
-                    totalScore += (int) RockPaperScissors.B + 3;
-                    break;
-                case 'Y':
-                    totalScore += (int) RockPaperScissors.C + 3;
-                    break;
-                // win
-                default:
+                'X' => opponent switch
                 {
-                    totalScore += opponent switch
-                    {
-                        'A' => (int) RockPaperScissors.B + 6,
-                        'B' => (int) RockPaperScissors.C + 6,
-                        _ => (int) RockPaperScissors.A + 6
-                    };
-
-                    break;
+                    'A' => (int) RockPaperScissors.C,
+                    'B' => (int) RockPaperScissors.A,
+                    _ => (int) RockPaperScissors.B
+                },
+                // draw
+                'Y' when opponent == 'A' => (int) RockPaperScissors.A + 3,
+                'Y' when opponent == 'B' => (int) RockPaperScissors.B + 3,
+                'Y' => (int) RockPaperScissors.C + 3,
+                // win
+                _ => opponent switch
+                {
+                    'A' => (int) RockPaperScissors.B + 6,
+                    'B' => (int) RockPaperScissors.C + 6,
+                    _ => (int) RockPaperScissors.A + 6
                 }
-            }
+            };
         });
 
         return totalScore;

@@ -27,7 +27,7 @@ static (long, long) ResultsForDay(int day) => day switch
 {
     1 => new Day1(GetFilePath(day)).GetResult(),
     2 => new Day2(GetFilePath(day)).GetResult(),
-    // 3 => new Day3(GetFilePath(day)).GetResult(),
+    3 => new Day3(GetFilePath(day)).GetResult(),
     // 4 => new Day4(GetFilePath(day)).GetResult(),
     // 5 => new Day5(GetFilePath(day)).GetResult(),
     // 6 => new Day6(GetFilePath(day)).GetResult(),
